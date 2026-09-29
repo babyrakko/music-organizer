@@ -60,8 +60,10 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
-    public int checkIndex()
+    public void checkIndex(int index) 
     {
-        return index.size(0,size()-1);
+        if(index >=0 && index > files.size()-1){
+            System.out.println("Error: Valid range is: " + index);
+        }
     }
 }
