@@ -62,8 +62,9 @@ public class MusicOrganizer
     }
     public void checkIndex(int index) 
     {
-        if(index >=0 && index > files.size()-1){
-            System.out.println("Error: Valid range is: " + index);
+        if((index >=0) && (index >= files.size()-1)) {
+            System.out.println("");
         }
+        
     }
 }
