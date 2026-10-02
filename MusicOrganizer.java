@@ -44,7 +44,7 @@ public class MusicOrganizer
      */
     public void listFile(int index)
     {
-        if(index >= 0 && index < files.size()) {
+        if(validIndex(index)) {
             String filename = files.get(index);
             System.out.println(filename);
         }
@@ -56,15 +56,33 @@ public class MusicOrganizer
      */
     public void removeFile(int index)
     {
-        if(index >= 0 && index < files.size()) {
+        if(validIndex(index)) {
             files.remove(index);
         }
     }
+    
     public void checkIndex(int index) 
     {
         if((index >=0) && (index >= files.size()-1)) {
             System.out.println("");
         }
-        
+        else {
+            System.out.println("Error: Valid range is between 0 to" + (files.size()-1));
+        }
+    }
+    
+    public boolean validIndex(int index)
+    {
+        if((index >=0) && (index >= files.size()-1)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    public void listAllfiles(int files)
+    {
+        System.out.println(files);
     }
 }
